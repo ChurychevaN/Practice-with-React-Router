@@ -8,7 +8,6 @@ const NewQuotes = () => {
 	const addQuoteHandler = ( quoteData ) => {
 		console.log(quoteData);
 		history.push(PATH.QUOTES);
-
 	};
 
 	return <QuoteForm onAddQuote={ addQuoteHandler } />;
