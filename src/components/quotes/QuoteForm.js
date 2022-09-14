@@ -19,7 +19,6 @@ const QuoteForm = (props) => {
     props.onAddQuote({ author: enteredAuthor, text: enteredText });
   }
 
-  console.log(123);
   return (
     <Card>
       <form className={classes.form} onSubmit={submitFormHandler}>
