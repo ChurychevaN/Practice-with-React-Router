@@ -5,6 +5,7 @@ import QuoteDetail from './pages/QuoteDetail';
 import Layout from './components/layout/Layout';
 
 import { PATH } from './pages/path';
+import NotFound from './pages/NotFound';
 
 function App() {
 	const { QUOTES, QUOTE, NEW_QUOTE } = PATH;
@@ -23,6 +24,9 @@ function App() {
 				</Route>
 				<Route path={ NEW_QUOTE }>
 					<NewQuotes />
+				</Route>
+				<Route path='*'>
+					<NotFound/>
 				</Route>
 			</Switch>
 		</Layout>
