@@ -4,20 +4,24 @@ import NewQuotes from './pages/NewQuotes';
 import QuoteDetail from './pages/QuoteDetail';
 import Layout from './components/layout/Layout';
 
+import { PATH } from './pages/path';
+
 function App() {
+	const { QUOTES, QUOTE, NEW_QUOTE } = PATH;
+
 	return (
 		<Layout>
 			<Switch>
 				<Route path="/" exact>
-					<Redirect to="/quotes" />
+					<Redirect to={ QUOTES } />
 				</Route>
-				<Route path="/quotes" exact>
+				<Route path={ QUOTES } exact>
 					<AllQuotes />
 				</Route>
-				<Route path="/quotes/:quoteId">
+				<Route path={ QUOTE }>
 					<QuoteDetail />
 				</Route>
-				<Route path="/new-quote">
+				<Route path={ NEW_QUOTE }>
 					<NewQuotes />
 				</Route>
 			</Switch>

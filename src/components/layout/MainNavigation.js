@@ -1,4 +1,7 @@
 import { NavLink } from 'react-router-dom';
+
+import { PATH } from '../../pages/path';
+
 import classes from './MainNavigation.module.css';
 
 const MainNavigation = () => {
@@ -14,7 +17,7 @@ const MainNavigation = () => {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/new-quotes"
+						<NavLink to={ PATH.NEW_QUOTE }
 								 activeClassName={ classes.active }>
 							Add a Quote.
 						</NavLink>
@@ -23,7 +26,6 @@ const MainNavigation = () => {
 			</nav>
 		</header>
 	);
-
 };
 
 export default MainNavigation;

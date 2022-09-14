@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import Card from '../ui/Card';
-import LoadingSpinner from '../ui/LoadingSpinner';
+import Card from '../UI/Card';
+import LoadingSpinner from '../UI/LoadingSpinner';
 import classes from './QuoteForm.module.css';
 
 const QuoteForm = (props) => {
@@ -19,6 +19,7 @@ const QuoteForm = (props) => {
     props.onAddQuote({ author: enteredAuthor, text: enteredText });
   }
 
+  console.log(123);
   return (
     <Card>
       <form className={classes.form} onSubmit={submitFormHandler}>
