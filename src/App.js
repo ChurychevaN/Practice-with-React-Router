@@ -4,8 +4,13 @@ import NewQuotes from './pages/NewQuotes';
 import QuoteDetail from './pages/QuoteDetail';
 import Layout from './components/layout/Layout';
 
-import { PATH } from './pages/path';
 import NotFound from './pages/NotFound';
+
+export const PATH = {
+	QUOTES: '/quotes',
+	QUOTE: '/quote',
+	NEW_QUOTE : '/new-quote'
+};
 
 function App() {
 	const { QUOTES, QUOTE, NEW_QUOTE } = PATH;
@@ -19,7 +24,7 @@ function App() {
 				<Route path={ QUOTES } exact>
 					<AllQuotes />
 				</Route>
-				<Route path={ QUOTE }>
+				<Route path={`${QUOTE}/:quoteId`}>
 					<QuoteDetail />
 				</Route>
 				<Route path={ NEW_QUOTE }>

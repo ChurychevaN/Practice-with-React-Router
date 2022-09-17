@@ -1,7 +1,6 @@
 import {Link} from 'react-router-dom';
 import classes from './QuoteItem.module.css';
-import { PATH } from '../../pages/path';
-
+import { PATH } from '../../App';
 
 const QuoteItem = (props) => {
   return (
@@ -12,7 +11,7 @@ const QuoteItem = (props) => {
         </blockquote>
         <figcaption>{props.author}</figcaption>
       </figure>
-      <Link className='btn' to={ `${PATH.QUOTES}/${props.id}`}>
+      <Link className='btn' to={ `${PATH.QUOTE}/${props.id}`}>
         View Fullscreen
       </Link>
     </li>

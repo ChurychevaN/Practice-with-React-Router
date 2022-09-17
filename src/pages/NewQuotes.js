@@ -1,10 +1,11 @@
 import { useHistory } from 'react-router-dom';
-import {PATH} from './path';
+import { PATH } from '../App';
 
 import QuoteForm from '../components/quotes/QuoteForm';
 
 const NewQuotes = () => {
 	const history = useHistory();
+
 	const addQuoteHandler = ( quoteData ) => {
 		console.log(quoteData);
 		history.push(PATH.QUOTES);

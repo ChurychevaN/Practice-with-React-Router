@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import { PATH } from '../../pages/path';
+import { PATH } from '../../App';
 
 import classes from './MainNavigation.module.css';
 

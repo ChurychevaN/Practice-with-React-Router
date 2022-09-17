@@ -19,7 +19,7 @@ const QuoteForm = ( props ) => {
 
 		// optional: Could validate here
 
-		props.onAddQuote({ author: enteredAuthor, text: enteredText });
+		props.onAddQuote({ id: Date.now().toString(), author: enteredAuthor, text: enteredText });
 	}
 
 	const finishEnteringHandler = () => {
