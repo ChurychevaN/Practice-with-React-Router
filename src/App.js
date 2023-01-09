@@ -8,12 +8,11 @@ import NotFound from './pages/NotFound';
 
 export const PATH = {
 	QUOTES: '/quotes',
-	QUOTE: '/quote',
-	NEW_QUOTE : '/new-quote'
+	NEW_QUOTE: '/new-quote',
 };
 
 function App() {
-	const { QUOTES, QUOTE, NEW_QUOTE } = PATH;
+	const { QUOTES, NEW_QUOTE } = PATH;
 
 	return (
 		<Layout>
@@ -24,14 +23,14 @@ function App() {
 				<Route path={ QUOTES } exact>
 					<AllQuotes />
 				</Route>
-				<Route path={`${QUOTE}/:quoteId`}>
+				<Route path={ `${ QUOTES }/:quoteId` }>
 					<QuoteDetail />
 				</Route>
 				<Route path={ NEW_QUOTE }>
 					<NewQuotes />
 				</Route>
-				<Route path='*'>
-					<NotFound/>
+				<Route path="*">
+					<NotFound />
 				</Route>
 			</Switch>
 		</Layout>

@@ -14,8 +14,8 @@ const QuoteDetail = () => {
 	const { quoteId } = params;
 
 	const { sendRequest, status, data: loadedQuote, error } = useHttp(
-		getSingleQuote, true);
-
+		getSingleQuote, true
+	);
 	useEffect(() => {
 		sendRequest(quoteId);
 	}, [ sendRequest, quoteId ]);
@@ -29,33 +29,30 @@ const QuoteDetail = () => {
 	}
 
 	if (error) {
-		return (
-			<p className="centered">{ error }</p>
-		);
+		return <p className="centered">{ error }</p>;
 	}
 
-	if (!loadedQuote.text) {
-		return( <p>No quote found!</p>
-		);
+	const { text, author } = loadedQuote;
+
+	if (!text) {
+		return  <p>No quote found!</p>;
 	}
 
-	return (
-		<Fragment>
-			<HighlightedQuote text={ loadedQuote.text }
-							  author={ loadedQuote.author } />
-			<Route path={ match.path } exact>
-				<div className="centered">
-					<Link className="btn--flat"
-						  to={ `${ match.url }/comments` }>
-						Load Comments
-					</Link>
-				</div>
-			</Route>
-			<Route path={ `${ match.path }/comments` }>
-				<Comments />
-			</Route>
-		</Fragment>
-	);
+	return (<Fragment>
+		<HighlightedQuote text={ text }
+						  author={ author } />
+		<Route path={ match.path } exact>
+			<div className="centered">
+				<Link className="btn--flat"
+					  to={ `${ match.url }/comments` }>
+					Load Comments
+				</Link>
+			</div>
+		</Route>
+		<Route path={ `${ match.path }/comments` }>
+			<Comments />
+		</Route>
+	</Fragment>);
 };
 
 export default QuoteDetail;
